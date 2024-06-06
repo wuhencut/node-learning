@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>头像上传</title>
+  </head>
+  <body>
+    <h2>头像上传</h2>
+    <hr />
+    <!-- enctype 上传文件必须声明，不然上传只会带上文件名不会是文件内容 -->
+    <form
+      action="http://localhost:3000/portrait"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      用户名：<input type="text" name="name" /> <br />
+      头像：<input type="file" name="portrait" /> <br />
+      <hr />
+      <button type="submit">上传</button>
+    </form>
+  </body>
+</html>
