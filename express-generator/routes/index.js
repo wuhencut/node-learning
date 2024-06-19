@@ -34,7 +34,9 @@ router.post('/portrait', function (req, res, next) {
       next(err);
       return;
     }
+    // fields: 除了文件上传之外的一般字段
     console.log('fields', fields);
+    // files: 文件上传字段
     console.log('files', files);
     // 服务器保存文件的访问url
     // newFileName 是服务器保存的文件名，为了防止文件名重复，所以在保存时会自动加上随机字符串
