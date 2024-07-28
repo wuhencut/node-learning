@@ -40,8 +40,16 @@ router.post('/account', function (req, res, next) {
       ...params,
     })
     .write();
-  console.log(params);
   res.render('success', { msg: '创建成功', url: '/account' });
+});
+
+// 删除列表条目
+router.get('/account/delete/:id', (req, res) => {
+  const id = req.params.id;
+  console.log('id', id);
+  db.get('accounts').remove({ id }).write();
+
+  res.render('success', { msg: '删除成功', url: '/account' });
 });
 
 module.exports = router;
